@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637901936693525910
-    m_Hash: 4004326711
+      ticks: 637909173446720877
+    m_Hash: 2999364598
   m_LockFileStatus:
     m_FilePath: C:/Users/thiba/Documents/etna/group-979627/PLI/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637902135015149684
+      ticks: 637909174259733610
     m_Hash: 157013556
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -133,6 +133,7 @@ m_PackageAssets:
         - 8.0.1
         - 8.0.2
         - 9.0.0-pre.1
+        - 9.0.0-pre.3
         compatible:
         - 5.0.3
         - 5.0.4
@@ -352,6 +353,7 @@ m_PackageAssets:
         - 7.0.0
         - 7.0.1
         - 8.0.0-pre.1
+        - 8.0.0-pre.3
         compatible:
         - 4.0.2
         verified: 4.0.2
@@ -3566,6 +3568,7 @@ m_PackageAssets:
         - 7.0.0-pre.4
         - 7.0.0
         - 8.0.0-pre.1
+        - 8.0.0-pre.2
         compatible:
         - 4.0.2
         - 4.0.3
