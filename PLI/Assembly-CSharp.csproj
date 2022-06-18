@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Common\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Common\Script\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Common\Script\HealthBar.cs" />
+    <Compile Include="Assets\Common\Script\PlayerHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
