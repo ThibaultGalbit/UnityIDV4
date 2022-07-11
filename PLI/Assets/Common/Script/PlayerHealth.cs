@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,9 +11,16 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
 
 
+    [SerializeField]
+    private Text _damageText;
+
+    Animator damageAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
+        damageAnimator = _damageText.GetComponent<Animator>();
+        _damageText.text = "";
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -27,5 +35,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        _damageText.text = (-damage).ToString();
+        damageAnimator.Play("Damage", -1, 0f);
+
     }
 }
