@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    public GameObject arrowPrefab;
 
     Vector2 movement;
 
@@ -17,10 +18,32 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y =  Input.GetAxisRaw("Vertical");
 
+
+        /*if (Input.GetKeyDown(KeyCode.M))
+        {
+            GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
+            arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(18.0f, 0.0f);
+        }*/
+
+        if (Input.GetButtonDown("attack"))
+        {
+            StartCoroutine(AttackCo());
+        }
+
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
     } 
+
+    private IEnumerator AttackCo()
+    {
+        animator.SetBool("AttackWeapon", true);
+        yield return null;
+        animator.SetBool("AttackWeapon", false);
+        yield return new WaitForSeconds(.1f);
+    }
 
 
     private void FixedUpdate()

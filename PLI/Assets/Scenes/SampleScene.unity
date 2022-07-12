@@ -14960,5 +14960,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWithCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 7708954777527867237, guid: 0e635846fd4f1a34aa17f7c0f2fa3411, type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 7957190980547833572, guid: 85a3686c6739cd241b190a29eb2afde5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e635846fd4f1a34aa17f7c0f2fa3411, type: 3}
