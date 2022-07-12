@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    public GameObject arrowPrefab;
+    public GameObject projectile;
 
     Vector2 movement;
 
@@ -41,10 +41,25 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("AttackWeapon", true);
         yield return null;
+
+        MakeArrow();
+
         animator.SetBool("AttackWeapon", false);
         yield return new WaitForSeconds(.1f);
     }
 
+    private void MakeArrow()
+    {
+        Vector2 temp = new Vector2(animator.GetFloat("Horizontal"), animator.GetFloat("Vertical")); 
+        Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>();
+        arrow.Setup(temp, ChooseArrowDirection());
+    }
+
+    Vector3 ChooseArrowDirection()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat("Horizontal"), animator.GetFloat("Vertical")) * Mathf.Rad2Deg;
+        return new Vector3(0, 0, temp);
+    }
 
     private void FixedUpdate()
     {
