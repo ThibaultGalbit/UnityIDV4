@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc156405f02e17841b4089e31f4897ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: SampleScene
+  LevelToLoad: Level01
   settingWindow: {fileID: 530414598}
 --- !u!114 &2028419564
 MonoBehaviour:
