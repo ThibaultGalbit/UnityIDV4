@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoblinEnemy : MonoBehaviour
 {
-    public float moveSpeed = 5f ;
+    public float moveSpeed = 4f ;
     public int damage = 10;
     public int distanceForFollow = 10;
     private string enemyDirection;
