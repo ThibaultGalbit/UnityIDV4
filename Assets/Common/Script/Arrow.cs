@@ -5,7 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public float speed;
-    public Rigidbody2D rigidbody;
+    public new Rigidbody2D rigidbody;
 
     // Start is called before the first frame update
     void Start()
