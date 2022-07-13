@@ -6,10 +6,11 @@ public class Gem : MonoBehaviour
 {
     public Transform player;
 
-    // Start is called before the first frame update
+    PlayerLevel playerLevel;
+
     void Start()
     {
-        
+        playerLevel = player.GetComponent<PlayerLevel>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,14 @@ public class Gem : MonoBehaviour
 
         if(playerDistance < 0.8)
         {
-            gameObject.SetActive(false);
+            gemTaked();
         }
+    }
+
+    void gemTaked()
+    {
+        gameObject.SetActive(false);
+        playerLevel.nbGems += 1;
+
     }
 }
