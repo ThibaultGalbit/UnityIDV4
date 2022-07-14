@@ -39,4 +39,11 @@ public class PlayerHealth : MonoBehaviour
         damageAnimator.Play("Damage", -1, 0f);
 
     }
+
+    public void resetHealth()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+
+    }
 }

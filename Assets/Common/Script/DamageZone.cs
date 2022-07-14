@@ -6,7 +6,7 @@ public class DamageZone : MonoBehaviour
 {
     public int damage;
 
-    public Transform player;
+    GameObject player;
 
     private float lastAttackedAt = -9999f;
     private float cooldown = 1f;
@@ -14,6 +14,7 @@ public class DamageZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame

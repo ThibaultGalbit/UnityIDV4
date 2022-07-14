@@ -10,6 +10,12 @@ public class Inventory : MonoBehaviour
 
     public static Inventory instance;
 
+
+    public int getGemsCount()
+    {
+        return gemsCount;
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -26,4 +32,11 @@ public class Inventory : MonoBehaviour
         gemsCount += count;
         gemsCountText.text = gemsCount.ToString();
     }
+
+    public void resetGems()
+    {
+        gemsCount = 0;
+        gemsCountText.text = gemsCount.ToString();
+    }
+
 }

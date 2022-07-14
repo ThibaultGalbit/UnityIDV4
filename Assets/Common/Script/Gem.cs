@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    public Transform player;
+/*    public Transform player;
 
     PlayerLevel playerLevel;
 
@@ -36,5 +36,5 @@ public class Gem : MonoBehaviour
         gameObject.SetActive(false);
         playerLevel.nbGems += 1;
 
-    }
+    }*/
 }

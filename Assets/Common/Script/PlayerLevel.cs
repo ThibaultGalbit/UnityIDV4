@@ -5,42 +5,32 @@ using UnityEngine;
 public class PlayerLevel : MonoBehaviour
 {
 
-    public int currentLevel = 1;
-    
-    public int nbGems = 0;
-
-    public bool playerCanLevelUp = false;
-
-    // Start is called before the first frame update
-    void Start()
+    public bool playerCanLevelUp(string levelName, int nbGems)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-     
-        if(nbGems == minGemsForlevel(currentLevel))
-        {
-            playerCanLevelUp = true;
+        if (nbGems >= minGemsForlevel(levelName)){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
 
-    int minGemsForlevel(int currentLevel)
+    int minGemsForlevel(string levelName)
     {
-        switch (currentLevel)
+        switch (levelName)
         {
-            case 1:
+            case "Level01":
                 return 1;
-            case 2:
-                return 3;
-            case 3:
+            case "Level02":
+                return 2;
+            case "Level03":
+                return 4;
+            case "Level04":
                 return 6;
-            case 4:
+            case "Level05":
                 return 10;
-            case 5:
+            case "Level06":
                 return 13;
         }
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+
 
 public class GoblinEnemy : MonoBehaviour
 {
@@ -14,21 +16,22 @@ public class GoblinEnemy : MonoBehaviour
     public float cooldown = 1f; //seconds
 
 
-    public Transform player;
+    GameObject player;
     public Animator animator;
     private Rigidbody2D rb;
     private Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        player = GameObject.Find("Player");
         rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
         rb.rotation = Mathf.Atan2(0, 0) * Mathf.Rad2Deg;
         direction.Normalize();
         movement = direction;
@@ -44,7 +47,7 @@ public class GoblinEnemy : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) { 
 
-        Vector3 vecRotation = player.position - transform.position;
+        Vector3 vecRotation = player.transform.position - transform.position;
         float rotation = Mathf.Atan2(vecRotation.y, vecRotation.x) * Mathf.Rad2Deg;
 
             if (rotation < -135 || rotation > 135)
@@ -77,7 +80,7 @@ public class GoblinEnemy : MonoBehaviour
 
     void setStateOfEnemy()
     {
-        Vector3 vecDist = player.position - transform.position;
+        Vector3 vecDist = player.transform.position - transform.position;
         float playerDistance = Mathf.Abs(vecDist.x) + Mathf.Abs(vecDist.y);
 
         if (playerDistance > 1.5 && playerDistance < distanceForFollow) {
