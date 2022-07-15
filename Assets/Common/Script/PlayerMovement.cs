@@ -12,6 +12,19 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("Plus d'une instance de PlayerMovement");
+            return;
+        }
+
+        instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
